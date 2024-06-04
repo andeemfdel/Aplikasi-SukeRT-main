@@ -1,0 +1,21 @@
+{
+    "name": "mycompany/mylibrary",
+    "description": "sukeRT akan membantu mempermudah anda dalam mendapatkan persetujuan RT setempat untuk kepentingan pribadi anda",
+    "type": "project",
+    "require": {
+        "phpoffice/phpspreadsheet": "^2.1"
+    },
+    "license": "-",
+    "autoload": {
+        "psr-4": {
+            "Mycompany\\Mylibrary\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andi Muchammad Fadel Abista",
+            "email": "andifadel633@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
