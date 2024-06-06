@@ -10,16 +10,17 @@ $sheet = $spreadsheet ->getActiveSheet();
 
 $sheet ->setCellValue('A1' , 'Tipe Ajuan'); 
 $sheet ->setCellValue('B1' , 'Nama Lengkap');
-$sheet ->setCellValue('C1' , 'Tempat & Tanggal Lahir');
-$sheet ->setCellValue('D1' , 'Jenis Kelamin');
-$sheet ->setCellValue('E1' , 'Agama');
-$sheet ->setCellValue('F1' , 'Pekerjaan');
-$sheet ->setCellValue('G1' , 'Kewarganegaraan');
-$sheet ->setCellValue('H1' , 'Status Pernikahan');
-$sheet ->setCellValue('I1' , 'NO. NIK');
-$sheet ->setCellValue('J1' , 'RT/RW');
-$sheet ->setCellValue('K1' , 'Alamat');
-$sheet ->setCellValue('L1' , 'Alasan Kebutuhan');
+$sheet ->setCellValue('C1' , 'Tempat');
+$sheet ->setCellValue('D1' , 'Tanggal Lahir');
+$sheet ->setCellValue('E1' , 'Jenis Kelamin');
+$sheet ->setCellValue('F1' , 'Agama');
+$sheet ->setCellValue('G1' , 'Pekerjaan');
+$sheet ->setCellValue('H1' , 'Kewarganegaraan');
+$sheet ->setCellValue('I1' , 'Status Pernikahan');
+$sheet ->setCellValue('J1' , 'NO. NIK');
+$sheet ->setCellValue('K1' , 'RT/RW');
+$sheet ->setCellValue('L1' , 'Alamat');
+$sheet ->setCellValue('M1' , 'Alasan Kebutuhan');
 
 $data = mysqli_query($koneksi, "select * from tbl_surat");
 $i = 1;
@@ -27,17 +28,18 @@ $no = 1;
 
 while ($d = mysqli_fetch_array($data)) {
     $sheet ->setCellValue('A' , $i, $d['tipe_ajuan']);
-    $sheet ->setCellValue('B' , $i, $d['Nama_lengkap']);
-    $sheet ->setCellValue('C' , $i, $d['ttl']);
-    $sheet ->setCellValue('D' , $i, $d['Kelamin']);
-    $sheet ->setCellValue('E' , $i, $d['Agama']);
-    $sheet ->setCellValue('F' , $i, $d['Pekerjaan']);
-    $sheet ->setCellValue('G' , $i, $d['kwn']);
-    $sheet ->setCellValue('H' , $i, $d['status-pernikahan']);
-    $sheet ->setCellValue('I' , $i, $d['NIK']);
-    $sheet ->setCellValue('J' , $i, $d['RT/RW']);
-    $sheet ->setCellValue('K' , $i, $d['Alamat']);
-    $sheet ->setCellValue('L' , $i, $d['Alasan_kebutuhan']);
+    $sheet ->setCellValue('B' , $i, $d['nama']);
+    $sheet ->setCellValue('C' , $i, $d['ttl_tempat']);
+    $sheet ->setCellValue('D' , $i, $d['ttl_tanggal']);
+    $sheet ->setCellValue('E' , $i, $d['jenis_kelamin']);
+    $sheet ->setCellValue('F' , $i, $d['agama']);
+    $sheet ->setCellValue('G' , $i, $d['pekerjaan']);
+    $sheet ->setCellValue('H' , $i, $d['kewarganegaraan']);
+    $sheet ->setCellValue('I' , $i, $d['status_pernikahan']);
+    $sheet ->setCellValue('J' , $i, $d['nik']);
+    $sheet ->setCellValue('K' , $i, $d['rt_rw']);
+    $sheet ->setCellValue('L' , $i, $d['alamat']);
+    $sheet ->setCellValue('M' , $i, $d['alasan']);
     $i++;
 }
 
