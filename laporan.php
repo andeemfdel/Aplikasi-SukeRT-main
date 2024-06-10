@@ -1,15 +1,35 @@
 <?php
-session_start();
-require 'db.php';
+// Include the database connection file
+include 'db.php';
 
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
+// Your query
+$sql = "SELECT * FROM tb_surat"; // Replace 'table_name' with your actual table name
+$result = $koneksi->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        // Process your data here
+        echo "ID: " . $row["id"]. " Tipe Ajuan: " . $row["tipe_ajuan"].
+        " - Nama: " . $row["nama"].
+        " - Tempat Lahir : " . $row["ttl_tempat"]. 
+        " - Tanggal Lahir: " . $row["ttl_tanggal"]. 
+        " - Jenis Kelamin: " . $row["jenis_kelamin"]. 
+        " - Agama: " . $row["agama"]. 
+        " - Pekerjaan : " . $row["Status Pernikahan"]. 
+        " - Kewarganegaraan: " . $row["kewarganegaraan"].
+        " - No.NIK: " . $row["nik"]. 
+        " - RT/RW: " . $row["rt_rw"]. 
+        " - Alamat: " . $row["alamat"]. 
+        " - Alasan: " . $row["alasan"].  
+        "<br>"; 
+    }
+} else {
+    echo "0 results";
 }
-
-$sql = "SELECT * FROM tb_surat";
-$result = $conn->query($sql);
+$koneksi->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

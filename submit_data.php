@@ -12,14 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['submit_form'])) {
         $tipe_ajuan = $_POST['surat-keterangan'];
         $nama = $_POST['nama'];
-        $ttl = $_POST['ttl'];
-        $jenis_kelamin = $_POST['jenis-kelamin'];
+        $ttl_tempat = $_POST['ttl_tempat'];
+        $ttl_tanggal = $_POST['ttl_tanggal'];
+        $jenis_kelamin = $_POST['jenis_kelamin'];
         $agama = $_POST['agama'];
         $pekerjaan = $_POST['pekerjaan'];
         $kewarganegaraan = $_POST['kewarganegaraan'];
-        $status_pernikahan = $_POST['status-pernikahan'];
+        $status_pernikahan = $_POST['status_pernikahan'];
         $nik = $_POST['nik'];
-        $rt_rw = $_POST['rt-rw'];
+        $rt_rw = $_POST['rt_rw'];
         $alamat = $_POST['alamat'];
         $alasan = $_POST['alasan'];
 
